@@ -75,11 +75,13 @@ const fire = (event) => {
     for (let i = 0; i < game.ships.length; i++){
         const ship = game.ships[i];
         const index = ship.location.indexOf(target.id);
+
         if (index >= 0){
             show.hit(target);
             play.updateData = 'hit';
-            ship.hit[index] = x;
+            ship.hit[index] = 'x';
             const life = ship.hit.indexOf('');
+
             if (life < 0){
                 play.updateData = 'dead';
                 for(const id of ship.location){
